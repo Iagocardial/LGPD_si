@@ -1,2 +1,5 @@
 def verificaCokiee(click):
-    continue
+    if click:
+        value = [{user: user,]
+    else:
+        continue
