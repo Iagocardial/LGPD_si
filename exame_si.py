@@ -1,0 +1,2 @@
+def verificaCokiee(click):
+    continue

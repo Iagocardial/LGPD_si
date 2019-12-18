@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exame de SI</title>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">
+            SISTEMA DE INFORMAÇÃO
+        </h1>
+    </div>
+
+
+    <div class="notification notification-alert">
+        Cookie Notification 
+        <button type="submit" id="close">&times;</button>
+        <button type="submit" id="allow">Allow</button>
+      </div>
+
+    <div style="text-align: center;">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+
+        <div>
+            <label for="pass">Password (8 characters minimum):</label>
+            <input type="password" id="pass" name="password" minlength="8" required>
+        </div>
+
+        <input type="submit" value="Sign in">
+
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() { 
+    
+            $('.notification').show();    
+                        $('#close').click(function(){  
+          
+                          $('.notification').hide();
+                          var click = false;  
+          
+                        });
+                        $('#allow').click(function(){
+
+                            $('.notification').hide();
+                            var click = true;
+                        });
+            function checkCookie() {
+                var cookieset = getCookie("_checkCookie");
+          
+                if (cookieset!="") {
+          
+                    $('.notification').hide();    
+          
+                }else{
+          
+                    $('.notification').hide();    
+          
+                    if (cookieset != "" && cookieset != null) {
+                        
+          
+          
+                      setCookie("_checkCookie", cookieset, 365);
+                    }
+                }
+            } 
+            checkCookie();
+            
+          });
+    
+        </script>
+</body>
+
+</html>
